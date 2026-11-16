@@ -12,6 +12,7 @@
     --paper:#F5F7FB;--paper-2:#EBEFF7;--ink:#0B1424;--ink-soft:#3D4A63;--mist:#7C8AA5;
     --cobalt:#2E6BFF;--cobalt-deep:#1B3FA8;--brass:#C99A4B;--brass-deep:#8A6B37;
     --sage:#7C9885;--sage-deep:#4F6B58;--blush:#D8A0A6;--plum:#5C3A4D;--slate:#64748B;
+    --brick:#B5432E;--violet:#7B2FF7;--forest:#12332A;--gold:#D8B65A;
     --line:#D8DFEC;--night:#0A1220;
   }
   *{box-sizing:border-box;margin:0;}
@@ -29,10 +30,10 @@
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;}
   nav .logo{font-size:13px;letter-spacing:.14em;}
   nav .logo b{font-weight:400;color:var(--cobalt);}
-  nav .links{display:flex;gap:22px;font-size:11px;letter-spacing:.08em;}
+  nav .links{display:flex;gap:20px;font-size:11px;letter-spacing:.08em;}
   nav .links a{color:var(--ink-soft);text-decoration:none;}
   nav .links a:hover{color:var(--cobalt);}
-  @media(max-width:640px){nav .links{display:none;}}
+  @media(max-width:860px){nav .links{display:none;}}
 
   /* ---------- hero ---------- */
   header{padding:84px 0 70px;text-align:center;position:relative;overflow:hidden;}
@@ -45,7 +46,7 @@
   header .wrap{position:relative;}
   header h1{font-size:clamp(38px,6.4vw,62px);margin:16px auto 18px;max-width:640px;}
   header h1 em{font-style:italic;color:var(--cobalt);}
-  header p.lede{font-size:13px;color:var(--ink-soft);max-width:540px;margin:0 auto 34px;}
+  header p.lede{font-size:13px;color:var(--ink-soft);max-width:560px;margin:0 auto 34px;}
   .btn{display:inline-block;font-family:'Share Tech Mono', monospace;font-size:12px;letter-spacing:.06em;text-decoration:none;padding:14px 26px;border-radius:8px;transition:all .18s;cursor:pointer;}
   .btn.solid{background:var(--ink);color:#fff;border:1px solid var(--ink);}
   .btn.solid:hover{background:var(--cobalt);border-color:var(--cobalt);box-shadow:0 8px 24px rgba(46,107,255,0.3);}
@@ -65,56 +66,108 @@
   .mini h3{font-size:22px;font-weight:600;margin-top:8px;position:relative;z-index:1;}
   .mini h3 em{font-style:italic;}
   .mini .m-role{font-size:8px;margin-top:5px;position:relative;z-index:1;}
-  .mini .m-tags{display:flex;gap:4px;margin-top:10px;flex-wrap:wrap;position:relative;z-index:1;}
+  .mini .m-tags{display:flex;gap:4px;margin-top:10px;flex-wrap:wrap;position:relative;z-index:1;max-width:190px;}
   .mini .m-tags span{font-size:6.4px;letter-spacing:.05em;text-transform:uppercase;border-radius:3px;padding:2.5px 6px;border:1px solid;}
+  .m-qr{position:absolute;right:14px;bottom:14px;width:32px;height:32px;border:3px solid #fff;border-radius:3px;z-index:2;
+    background:conic-gradient(#111 25%,#fff 0 50%,#111 0 75%,#fff 0) 0 0/6px 6px;}
 
+  /* ===== NEW SIX ===== */
+  /* A · STOREFRONT */
+  .mini.store{background:#F6EBDD;color:#3B1F17;padding-top:30px;}
+  .mini.store::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:repeating-linear-gradient(90deg,var(--brick) 0 14px,#F6EBDD 14px 28px);}
+  .mini.store .m-eyebrow{color:#9A6F5C;} .mini.store h3 em{color:var(--brick);} .mini.store .m-role{color:#8A5E4C;}
+  .mini.store .m-tags span{color:#7A4A3A;border-color:#E5CDB8;}
+  /* B · HANDLE */
+  .mini.handle{background:linear-gradient(135deg,#2B1055,#7B2FF7 55%,#F107A3);color:#fff;}
+  .mini.handle::after{content:"@";position:absolute;right:50px;top:-14px;font-family:'Cormorant Garamond',serif;font-size:110px;opacity:.16;}
+  .mini.handle .m-eyebrow,.mini.handle .m-role{color:#E6D3FF;} .mini.handle h3 em{color:#FFD6F3;}
+  .mini.handle .m-tags span{color:#fff;border-color:rgba(255,255,255,.35);}
+  /* C · CLUB */
+  .mini.club{background:var(--forest);color:#F2EBD3;}
+  .mini.club::before{content:"";position:absolute;right:16px;top:14px;width:44px;height:44px;border-radius:50%;border:2px solid var(--gold);box-shadow:inset 0 0 0 5px var(--forest),inset 0 0 0 6px var(--gold);}
+  .mini.club .m-eyebrow,.mini.club .m-role{color:#9DB8A8;} .mini.club h3 em{color:var(--gold);}
+  .mini.club .m-tags span{color:#CFE0D3;border-color:#25504A;}
+  /* D · NOTEBOOK */
+  .mini.notebook{background:#FFF8C9;color:#1E2430;}
+  .mini.notebook::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 15px,rgba(46,107,255,.22) 15px 16px);}
+  .mini.notebook::before{content:"";position:absolute;left:18px;top:0;bottom:0;width:1px;background:#E0524D;z-index:1;}
+  .mini.notebook .m-eyebrow,.mini.notebook .m-role{color:#7A7646;} .mini.notebook h3 em{color:#D1453B;}
+  .mini.notebook .m-tags span{color:#5B5836;border-color:#E2DB8E;}
+  /* E · MAKER */
+  .mini.maker{background:linear-gradient(160deg,#D2AE82,#C09A6B);color:#3A2A18;}
+  .mini.maker::before{content:"";position:absolute;right:16px;top:14px;width:40px;height:40px;border-radius:50%;border:2px dashed rgba(58,42,24,.55);}
+  .mini.maker .m-eyebrow,.mini.maker .m-role{color:#5F472B;} .mini.maker h3 em{color:#7A2E1D;}
+  .mini.maker .m-tags span{color:#4A3620;border-color:rgba(58,42,24,.35);}
+  /* F · STAGE */
+  .mini.stage{background:#0B0B0F;color:#fff;}
+  .mini.stage::before{content:"";position:absolute;right:-30px;top:-30px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(0,245,200,.35),transparent 70%);}
+  .mini.stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:repeating-linear-gradient(90deg,#00F5C8 0 3px,transparent 3px 7px);opacity:.55;}
+  .mini.stage .m-eyebrow,.mini.stage .m-role{color:#7E8794;} .mini.stage h3 em{color:#00F5C8;}
+  .mini.stage .m-tags span{color:#B8C2CF;border-color:#232832;}
+
+  /* ===== WINTER SIX ===== */
+  .mini.frost{background:linear-gradient(160deg,#EAF4FB,#CFE5F4);color:#12304A;}
+  .mini.frost::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(60deg,rgba(255,255,255,.6) 0 1px,transparent 1px 14px);}
+  .mini.frost::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(-60deg,rgba(100,160,205,.16) 0 1px,transparent 1px 14px);}
+  .mini.frost .m-eyebrow,.mini.frost .m-role{color:#5D85A3;} .mini.frost h3 em{color:#2F7DB5;}
+  .mini.frost .m-tags span{color:#3E6A8C;border-color:#B8D3E6;}
+  .mini.aurora{background:linear-gradient(170deg,#06122B,#0A2342);color:#E8F6F5;}
+  .mini.aurora::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(130px 70px at 75% 25%,rgba(72,255,190,.35),transparent 70%),radial-gradient(110px 60px at 92% 62%,rgba(120,110,255,.3),transparent 70%);}
+  .mini.aurora::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(rgba(255,255,255,.7) 1px,transparent 1.5px) 0 0/34px 34px;opacity:.3;}
+  .mini.aurora .m-eyebrow,.mini.aurora .m-role{color:#7FA3C2;} .mini.aurora h3 em{color:#5EF2C0;}
+  .mini.aurora .m-tags span{color:#B7D4E6;border-color:#1B3A5C;}
+  .mini.pine{background:linear-gradient(165deg,#12281F,#0C1C16);color:#EEF3EC;}
+  .mini.pine::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(rgba(255,255,255,.35) 1.2px,transparent 1.6px) 0 0/18px 18px;}
+  .mini.pine::after{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#CFE3D6;}
+  .mini.pine .m-eyebrow,.mini.pine .m-role{color:#86A596;} .mini.pine h3 em{color:#A8D5B8;}
+  .mini.pine .m-tags span{color:#BFD6C7;border-color:#254638;}
+  .mini.drift{background:#F4F6F8;color:#2A3440;}
+  .mini.drift::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 200px 60px at 30% 112%,#fff 60%,transparent 61%),radial-gradient(ellipse 180px 50px at 85% 120%,#E1E8EF 60%,transparent 61%);}
+  .mini.drift::after{content:"";position:absolute;left:26px;top:12px;width:28px;height:1.5px;background:#9FB0C2;}
+  .mini.drift .m-eyebrow,.mini.drift .m-role{color:#8D9BAA;} .mini.drift h3 em{color:#6F8AA6;}
+  .mini.drift .m-tags span{color:#5F7184;border-color:#D9E1E9;}
+  .mini.midnight{background:linear-gradient(160deg,#141A3D,#0A0E26);color:#E6E9FA;}
+  .mini.midnight::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;background:radial-gradient(#fff 1px,transparent 1.4px) 0 0/46px 46px,radial-gradient(rgba(255,255,255,.6) 1px,transparent 1.4px) 23px 23px/46px 46px;}
+  .mini.midnight::after{content:"";position:absolute;right:22px;top:16px;width:24px;height:24px;border-radius:50%;box-shadow:inset -7px -2px 0 0 #D9DEFA;}
+  .mini.midnight .m-eyebrow,.mini.midnight .m-role{color:#7C86B8;} .mini.midnight h3 em{color:#9DB0FF;}
+  .mini.midnight .m-tags span{color:#B4BCE6;border-color:#262F63;}
+  .mini.hearth{background:#211C1B;color:#F3E9E1;}
+  .mini.hearth::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,rgba(255,255,255,.045) 0 6px,transparent 6px 12px),repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 6px,transparent 6px 12px);}
+  .mini.hearth::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,#E8793A,#F2B25C);}
+  .mini.hearth .m-eyebrow,.mini.hearth .m-role{color:#A29088;} .mini.hearth h3 em{color:#F2A05C;}
+  .mini.hearth .m-tags span{color:#D8C7BC;border-color:#3A312E;}
+
+  /* ===== ARCHIVES ===== */
   /* 1 · EXECUTIVE */
   .mini.brass{background:#0A0E14;color:#ECEAE2;}
   .mini.brass::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--brass),var(--brass-deep));}
-  .mini.brass .m-eyebrow{color:#8B93A1;}
-  .mini.brass h3 em{color:var(--brass);}
-  .mini.brass .m-role{color:#8B93A1;}
+  .mini.brass .m-eyebrow{color:#8B93A1;} .mini.brass h3 em{color:var(--brass);} .mini.brass .m-role{color:#8B93A1;}
   .mini.brass .m-tags span{color:#B9B4A5;border-color:#232C3B;}
-
   /* 2 · COBALT */
   .mini.cobalt{background:linear-gradient(160deg,#0A1220,#0E1B36);color:#E8EEFB;}
   .mini.cobalt::before{content:"";position:absolute;left:10px;top:12px;bottom:12px;width:2px;background:linear-gradient(180deg,var(--cobalt),var(--cobalt-deep));box-shadow:0 0 8px rgba(46,107,255,0.4);}
   .mini.cobalt::after{content:"";position:absolute;inset:0;pointer-events:none;
-    background-image:linear-gradient(rgba(46,107,255,0.06) 1px, transparent 1px),linear-gradient(90deg, rgba(46,107,255,0.06) 1px, transparent 1px);
-    background-size:22px 22px;}
-  .mini.cobalt .m-eyebrow{color:#7C8AA5;}
-  .mini.cobalt h3 em{color:var(--cobalt);}
-  .mini.cobalt .m-role{color:#7C8AA5;}
+    background-image:linear-gradient(rgba(46,107,255,0.06) 1px, transparent 1px),linear-gradient(90deg, rgba(46,107,255,0.06) 1px, transparent 1px);background-size:22px 22px;}
+  .mini.cobalt .m-eyebrow{color:#7C8AA5;} .mini.cobalt h3 em{color:var(--cobalt);} .mini.cobalt .m-role{color:#7C8AA5;}
   .mini.cobalt .m-tags span{color:#A9B7D6;border-color:#1A2740;}
-
   /* 3 · IVORY */
   .mini.ivory{background:#FBF8F1;color:#2A2620;}
   .mini.ivory::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(42,38,32,0.05) 1px, transparent 1px);background-size:100% 14px;}
   .mini.ivory::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:#2A2620;}
-  .mini.ivory .m-eyebrow{color:#9C927F;}
-  .mini.ivory h3 em{color:#A3814A;}
-  .mini.ivory .m-role{color:#8A8172;}
+  .mini.ivory .m-eyebrow{color:#9C927F;} .mini.ivory h3 em{color:#A3814A;} .mini.ivory .m-role{color:#8A8172;}
   .mini.ivory .m-tags span{color:#6E6656;border-color:#E3DCCB;}
-
   /* 4 · SAGE */
   .mini.sage{background:linear-gradient(165deg,#EEF3EE,#E1EAE2);color:#2C3A31;}
   .mini.sage::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(79,107,88,0.18) 1px, transparent 1px);background-size:16px 16px;}
   .mini.sage::before{content:"";position:absolute;left:14px;top:14px;width:22px;height:22px;border:1.5px solid var(--sage-deep);border-radius:50%;opacity:.5;}
-  .mini.sage .m-eyebrow{color:#7C9885;}
-  .mini.sage h3{color:#26332B;}
-  .mini.sage h3 em{color:var(--sage-deep);}
-  .mini.sage .m-role{color:#6B8172;}
+  .mini.sage .m-eyebrow{color:#7C9885;} .mini.sage h3{color:#26332B;} .mini.sage h3 em{color:var(--sage-deep);} .mini.sage .m-role{color:#6B8172;}
   .mini.sage .m-tags span{color:#4F6B58;border-color:#C7D6CA;}
-
   /* 5 · BLUSH */
   .mini.blush{background:linear-gradient(160deg,#FBF1F2,#F4E1E4);color:var(--plum);}
   .mini.blush::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:repeating-linear-gradient(135deg, rgba(92,58,77,0.05) 0 1px, transparent 1px 12px);}
   .mini.blush::before{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle, rgba(216,160,166,0.5), transparent 70%);}
-  .mini.blush .m-eyebrow{color:#B98A92;}
-  .mini.blush h3 em{color:#A9556B;}
-  .mini.blush .m-role{color:#96707F;}
+  .mini.blush .m-eyebrow{color:#B98A92;} .mini.blush h3 em{color:#A9556B;} .mini.blush .m-role{color:#96707F;}
   .mini.blush .m-tags span{color:#84586A;border-color:#EBCBD0;}
-
   /* 6 · SLATE */
   .mini.slate{background:linear-gradient(170deg,#F3F5F8,#E8ECF2);color:#243044;}
   .mini.slate::before{content:"";position:absolute;left:26px;right:26px;top:52%;height:1px;background:#C3CBD8;}
@@ -125,33 +178,42 @@
       linear-gradient(#64748B,#64748B) bottom right/14px 1.5px,
       linear-gradient(#64748B,#64748B) bottom right/1.5px 14px;
     background-repeat:no-repeat;opacity:.55;}
-  .mini.slate .m-eyebrow{color:#8B96A8;}
-  .mini.slate h3 em{color:var(--slate);}
-  .mini.slate .m-role{color:#77839A;}
+  .mini.slate .m-eyebrow{color:#8B96A8;} .mini.slate h3 em{color:var(--slate);} .mini.slate .m-role{color:#77839A;}
   .mini.slate .m-tags span{color:#5B6880;border-color:#D3DAE4;}
 
   /* ---------- sections ---------- */
   section{padding:74px 0;}
   section.alt{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .sec-head{text-align:center;max-width:580px;margin:0 auto 46px;}
+  .sec-head{text-align:center;max-width:600px;margin:0 auto 46px;}
   .sec-head h2{font-size:clamp(28px,4.4vw,40px);margin:12px 0 12px;}
   .sec-head h2 em{font-style:italic;}
   .sec-head p{font-size:12.5px;color:var(--ink-soft);}
+  .subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:var(--brass-deep);margin:-2px 0 12px;}
+  .subtitle::before,.subtitle::after{content:"";display:inline-block;width:34px;height:1px;background:var(--line);vertical-align:middle;margin:0 12px;}
+
+  .group-label{font-size:22px;font-style:italic;color:var(--ink-soft);margin:6px 0 20px;padding-bottom:10px;border-bottom:1px solid var(--line);}
+  .choice + .group-label{margin-top:54px;}
 
   /* audiences */
   .duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:900px){.trio{grid-template-columns:1fr;}}
   @media(max-width:720px){.duo{grid-template-columns:1fr;}}
   .aud{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 28px;position:relative;overflow:hidden;}
   .aud::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;}
   .aud.biz::before{background:linear-gradient(90deg,var(--brass),var(--brass-deep));}
   .aud.career::before{background:linear-gradient(90deg,var(--cobalt),var(--cobalt-deep));}
+  .aud.shop::before{background:linear-gradient(90deg,var(--brick),#E0875A);}
+  .aud.social::before{background:linear-gradient(90deg,var(--violet),#F107A3);}
+  .aud.org::before{background:linear-gradient(90deg,var(--forest),var(--gold));}
   .aud h3{font-size:24px;font-style:italic;margin:6px 0 10px;}
   .aud p{font-size:12px;color:var(--ink-soft);margin-bottom:14px;}
   .aud ul{list-style:none;padding:0;}
   .aud ul li{font-size:11.5px;color:var(--ink-soft);padding:6px 0 6px 20px;position:relative;border-top:1px dashed var(--line);}
   .aud ul li::before{content:"→";position:absolute;left:0;font-size:10px;}
-  .aud.biz ul li::before{color:var(--brass-deep);}
-  .aud.career ul li::before{color:var(--cobalt);}
+  .aud.biz ul li::before{color:var(--brass-deep);} .aud.career ul li::before{color:var(--cobalt);}
+  .aud.shop ul li::before{color:var(--brick);} .aud.social ul li::before{color:var(--violet);} .aud.org ul li::before{color:var(--sage-deep);}
+  .aud .qr-chip{display:inline-block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);border-radius:4px;padding:3px 8px;margin-bottom:12px;color:var(--ink-soft);background:var(--paper);}
 
   /* choose your card */
   .choice{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
@@ -169,6 +231,29 @@
   .t-brass{color:var(--brass-deep);} .t-cobalt{color:var(--cobalt);}
   .t-ivory{color:#A3814A;} .t-sage{color:var(--sage-deep);}
   .t-blush{color:#A9556B;} .t-slate{color:var(--slate);}
+  .t-store{color:var(--brick);} .t-handle{color:var(--violet);} .t-club{color:var(--sage-deep);}
+  .t-frost{color:#2F7DB5;} .t-aurora{color:#0E9C77;} .t-pine{color:#3F7A5B;} .t-drift{color:#6F8AA6;} .t-midnight{color:#5B6BD6;} .t-hearth{color:#C9602A;}
+  .t-notebook{color:#B3862B;} .t-maker{color:#7A2E1D;} .t-stage{color:#00967A;}
+
+  /* QR studio */
+  .qr-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:34px 30px;position:relative;overflow:hidden;}
+  .qr-wrap::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,var(--cobalt),var(--brass));}
+  @media(max-width:760px){.qr-wrap{grid-template-columns:1fr;}}
+  .qr-wrap h3{font-size:26px;font-style:italic;margin:8px 0 10px;}
+  .qr-wrap p{font-size:12px;color:var(--ink-soft);margin-bottom:14px;}
+  .qr-wrap label{display:block;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mist);margin:12px 0 6px;}
+  .qr-wrap input,.qr-wrap select{width:100%;font-family:'Share Tech Mono',monospace;font-size:12.5px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:12px 14px;outline:none;}
+  .qr-wrap input:focus,.qr-wrap select:focus{border-color:var(--cobalt);box-shadow:0 0 0 3px rgba(46,107,255,0.14);}
+  .qr-row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
+  .qr-row .btn{padding:11px 18px;font-size:11px;}
+  .qr-stage{text-align:center;}
+  .qr-box{display:inline-block;background:#fff;padding:14px;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 30px rgba(11,20,36,0.1);min-width:188px;min-height:188px;}
+  .qr-box img,.qr-box canvas{display:block;max-width:100%;}
+  .qr-cap{font-size:10px;color:var(--mist);margin-top:12px;letter-spacing:.06em;word-break:break-all;}
+  .qr-uses{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px;}
+  @media(max-width:760px){.qr-uses{grid-template-columns:1fr 1fr;}}
+  .qr-uses div{background:var(--paper);border:1px dashed var(--line);border-radius:10px;padding:14px;font-size:10.5px;color:var(--ink-soft);}
+  .qr-uses b{display:block;font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;font-weight:600;color:var(--ink);margin-bottom:2px;}
 
   /* process strip */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
@@ -278,7 +363,10 @@
     <span class="logo">SIX·<b>CARDS</b></span>
     <div class="links">
       <a href="#audiences">Who it's for</a>
+      <a href="#promote">Promote</a>
       <a href="#styles">Card styles</a>
+      <a href="#qr">QR codes</a>
+      <a href="#library">Library</a>
       <a href="#services">More services</a>
       <a href="#tips">Promo tips</a>
       <a href="#pay">Pay</a>
@@ -291,29 +379,31 @@
   <div class="wrap">
     <p class="eyebrow">Designed anytime, anywhere · Same-day pickup depending on location · or shipping</p>
     <h1>A card that opens <em>doors.</em></h1>
-    <p class="lede">Custom business cards for companies building their brand — and for people building their careers. Six signature styles, print-ready files, printing instructions included.</p>
+    <p class="lede">Custom business cards for shops, creators, clubs and careers. A winter-cool collection, QR codes when you want them, print-ready files, printing instructions included.</p>
     <div class="hero-ctas">
       <a class="btn solid" href="#styles">See the styles</a>
       <a class="btn ghost" href="#contact">Get yours</a>
     </div>
     <div class="fan reveal">
-      <div class="mini brass">
-        <p class="m-eyebrow">Your Company · Est. 2026</p>
-        <h3>The <em>Executive</em></h3>
-        <p class="m-role">Brass on ink · timeless &amp; established</p>
-        <div class="m-tags"><span>Services</span><span>Local Biz</span><span>Trades</span></div>
+      <div class="mini frost">
+        <p class="m-eyebrow">Your Name · Clear thinking</p>
+        <h3>The <em>Frost</em></h3>
+        <p class="m-role">Ice blue · crystal lines</p>
+        <div class="m-tags"><span>Calm</span><span>Precise</span></div>
+        <div class="m-qr"></div>
       </div>
-      <div class="mini blush">
-        <p class="m-eyebrow">Your Brand · Bookings open</p>
-        <h3>The <em>Blush</em></h3>
-        <p class="m-role">Blush &amp; plum · warm &amp; inviting</p>
-        <div class="m-tags"><span>Beauty</span><span>Events</span><span>Creators</span></div>
+      <div class="mini aurora">
+        <p class="m-eyebrow">Your Brand · After dark</p>
+        <h3>The <em>Aurora</em></h3>
+        <p class="m-role">Deep navy · northern glow</p>
+        <div class="m-tags"><span>Creative</span><span>Digital</span></div>
+        <div class="m-qr"></div>
       </div>
-      <div class="mini sage">
-        <p class="m-eyebrow">Your Studio · By appointment</p>
-        <h3>The <em>Sage</em></h3>
-        <p class="m-role">Soft green · calm &amp; welcoming</p>
-        <div class="m-tags"><span>Wellness</span><span>Salons</span><span>Care</span></div>
+      <div class="mini hearth">
+        <p class="m-eyebrow">Your Kitchen · Warm inside</p>
+        <h3>The <em>Hearth</em></h3>
+        <p class="m-role">Charcoal &amp; ember · knit texture</p>
+        <div class="m-tags"><span>Cozy</span><span>Handmade</span></div>
       </div>
     </div>
   </div>
@@ -353,15 +443,286 @@
   </div>
 </section>
 
-<section id="styles">
+<section id="promote">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow">Choose your service · six signature layouts</p>
+      <p class="eyebrow">Three ways to promote · one scannable card</p>
+      <h2>Put your <em>link</em> in their hand.</h2>
+      <p>Every card can carry a QR code that sends people straight to your main site, profile or sign-up page. No typing, no typos, no lost leads.</p>
+    </div>
+    <div class="trio">
+      <div class="aud shop reveal">
+        <span class="qr-chip">QR → site, menu, maps</span>
+        <p class="eyebrow">Online &amp; brick-and-mortar</p>
+        <h3>Promote your business</h3>
+        <p>Whether customers find you on a street corner or in a search bar, one card connects both worlds.</p>
+        <ul>
+          <li>QR to your online store, booking page or menu</li>
+          <li>QR to Google Maps or your Google review page</li>
+          <li>Put the same code on window decals &amp; receipts</li>
+          <li>Hours, address &amp; website on one clean back side</li>
+        </ul>
+      </div>
+      <div class="aud social reveal">
+        <span class="qr-chip">QR → profile, link-in-bio</span>
+        <p class="eyebrow">Social media profiles</p>
+        <h3>Promote your profile</h3>
+        <p>Turn every handshake, event and sticker into a follow. One scan opens your profile or link-in-bio page.</p>
+        <ul>
+          <li>Big, readable @handle with platform icons</li>
+          <li>QR to Instagram, TikTok, YouTube or Linktree</li>
+          <li>Colors that match your banner &amp; highlights</li>
+          <li>Matching digital card for DMs and stories</li>
+        </ul>
+      </div>
+      <div class="aud org reveal">
+        <span class="qr-chip">QR → sign-up, calendar, chat</span>
+        <p class="eyebrow">Organizations &amp; clubs</p>
+        <h3>Promote your group</h3>
+        <p>Recruit at tabling events, fairs and meetings with a card that makes joining take five seconds.</p>
+        <ul>
+          <li>QR to your membership form or Discord / GroupMe</li>
+          <li>Meeting times, location &amp; officer contacts</li>
+          <li>Crest or logo seal for a credible, official look</li>
+          <li>Event-specific codes to track which fair worked</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="styles" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Winter collection · six new layouts</p>
       <h2>Pick your <em>style.</em></h2>
-      <p>Every card ships as double-sided, print-ready 300 DPI files sized for standard 3.5" × 2" cards — printing steps included. Don't see your vibe? <b>Fully custom cards</b> can be made from scratch too — your colors, your logo, your idea.</p>
+      <p>Cold-weather colors and textures: frost, snow, spruce, night sky. They are about the season, not any holiday, so they suit everyone. Three include a QR code and three are left clear, and a QR can be added to any of them. Every card ships as double-sided, print-ready 300 DPI files sized for 3.5" × 2" cards. Prefer something not wintry? The <a href="#library" style="color:var(--cobalt)">Library</a> has twelve more, or ask for a <b>fully custom</b> card.</p>
     </div>
     <div class="choice">
+      <div class="style-card reveal">
+        <div class="mini frost">
+          <p class="m-eyebrow">Your Name · Clear thinking</p>
+          <h3>The <em>Frost</em></h3>
+          <p class="m-role">Ice blue · crystal lines</p>
+          <div class="m-tags"><span>Calm</span><span>Precise</span></div>
+          <div class="m-qr"></div>
+        </div>
+        <h3>The Frost</h3>
+        <p class="tagline t-frost">Ice blue · crisp &amp; calm</p>
+        <p class="desc">Pale ice-blue with fine crystalline lines. Trustworthy and clean, with a QR to your booking page or site.</p>
+        <p class="best"><b>Best for:</b> clinics, tutors, coaches, consultants.</p>
+        <button class="btn solid" onclick="pickStyle('The Frost')">Request this style</button>
+      </div>
+      <div class="style-card reveal">
+        <div class="mini aurora">
+          <p class="m-eyebrow">Your Brand · After dark</p>
+          <h3>The <em>Aurora</em></h3>
+          <p class="m-role">Deep navy · northern glow</p>
+          <div class="m-tags"><span>Creative</span><span>Digital</span></div>
+          <div class="m-qr"></div>
+        </div>
+        <h3>The Aurora</h3>
+        <p class="tagline t-aurora">Northern lights · vivid, not loud</p>
+        <p class="desc">Midnight navy with a soft green and violet glow and scattered stars. A QR links straight to your portfolio or channel.</p>
+        <p class="best"><b>Best for:</b> creators, designers, travel brands, tech.</p>
+        <button class="btn solid" onclick="pickStyle('The Aurora')">Request this style</button>
+      </div>
+      <div class="style-card reveal">
+        <div class="mini pine">
+          <p class="m-eyebrow">Your Outfit · Year-round</p>
+          <h3>The <em>Pine</em></h3>
+          <p class="m-role">Spruce green · snow dust</p>
+          <div class="m-tags"><span>Outdoors</span><span>Local</span></div>
+          <div class="m-qr"></div>
+        </div>
+        <h3>The Pine</h3>
+        <p class="tagline t-pine">Spruce &amp; snow · grounded</p>
+        <p class="desc">Deep spruce green with fine snow dust and a pale spine. A QR sends people to your booking or trail page.</p>
+        <p class="best"><b>Best for:</b> landscapers, lodges, guides, outdoor shops.</p>
+        <button class="btn solid" onclick="pickStyle('The Pine')">Request this style</button>
+      </div>
+      <div class="style-card reveal">
+        <div class="mini drift">
+          <p class="m-eyebrow">Your Studio · Simply done</p>
+          <h3>The <em>Snowdrift</em></h3>
+          <p class="m-role">Snow white · soft drifts</p>
+          <div class="m-tags"><span>Minimal</span><span>Quiet</span></div>
+        </div>
+        <h3>The Snowdrift</h3>
+        <p class="tagline t-drift">Snow white · quiet &amp; soft</p>
+        <p class="desc">Soft white and gray with gentle drifts along the bottom edge. Left clear on purpose, so your details do the talking.</p>
+        <p class="best"><b>Best for:</b> designers, photographers, planners, boutiques.</p>
+        <button class="btn solid" onclick="pickStyle('The Snowdrift')">Request this style</button>
+      </div>
+      <div class="style-card reveal">
+        <div class="mini midnight">
+          <p class="m-eyebrow">Your Name · Long nights</p>
+          <h3>The <em>Midnight</em></h3>
+          <p class="m-role">Indigo · stars &amp; crescent</p>
+          <div class="m-tags"><span>Thoughtful</span><span>Night</span></div>
+        </div>
+        <h3>The Midnight</h3>
+        <p class="tagline t-midnight">Indigo sky · stars &amp; crescent</p>
+        <p class="desc">Deep indigo with a scatter of stars and a small crescent. No QR, so there is room for a handwritten note on the back.</p>
+        <p class="best"><b>Best for:</b> writers, tutors, musicians, late-night food &amp; music.</p>
+        <button class="btn solid" onclick="pickStyle('The Midnight')">Request this style</button>
+      </div>
+      <div class="style-card reveal">
+        <div class="mini hearth">
+          <p class="m-eyebrow">Your Kitchen · Warm inside</p>
+          <h3>The <em>Hearth</em></h3>
+          <p class="m-role">Charcoal &amp; ember · knit texture</p>
+          <div class="m-tags"><span>Cozy</span><span>Handmade</span></div>
+        </div>
+        <h3>The Hearth</h3>
+        <p class="tagline t-hearth">Charcoal &amp; ember · cozy cold-weather</p>
+        <p class="desc">Charcoal with a subtle knit texture and an ember-orange edge. Warm in feel, cold-weather in spirit, with no QR.</p>
+        <p class="best"><b>Best for:</b> bakeries, cafés, bars, candle &amp; craft makers.</p>
+        <button class="btn solid" onclick="pickStyle('The Hearth')">Request this style</button>
+      </div>
 
+    </div>
+  </div>
+</section>
+
+<section id="qr">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Seamless online access · scan &amp; go</p>
+      <h2>Your main site, <em>one scan</em> away.</h2>
+      <p>Try it: paste your website or profile link and preview the QR code that goes on your card. Final codes are placed and sized by me so they scan cleanly in print.</p>
+    </div>
+    <div class="qr-wrap reveal">
+      <div>
+        <p class="eyebrow">Free QR preview</p>
+        <h3>Build your code</h3>
+        <p>Works for websites, booking pages, menus, social profiles and sign-up forms.</p>
+        <label for="qr-url">Your link</label>
+        <input id="qr-url" type="url" value="https://yourwebsite.com" placeholder="https://yourwebsite.com">
+        <label for="qr-color">Code color</label>
+        <select id="qr-color">
+          <option value="#0B1424">Ink black (best contrast)</option>
+          <option value="#1B3FA8">Deep cobalt</option>
+          <option value="#12332A">Forest green</option>
+          <option value="#5C3A4D">Plum</option>
+        </select>
+        <div class="qr-row">
+          <button class="btn solid" id="qr-make" type="button">Generate</button>
+          <button class="btn ghost" id="qr-dl" type="button">Download PNG</button>
+          <a class="btn ghost" href="#contact" onclick="pickStyle('QR Codes & Link Pages')">Add to my card</a>
+        </div>
+      </div>
+      <div class="qr-stage">
+        <div class="qr-box" id="qr-box"></div>
+        <p class="qr-cap" id="qr-cap">yourwebsite.com</p>
+      </div>
+    </div>
+    <div class="qr-uses reveal">
+      <div><b>On the card</b>Back side, sized for fast phone scans.</div>
+      <div><b>On the door</b>Window decals that open your menu or booking page.</div>
+      <div><b>On the feed</b>Story and post templates that link to your site.</div>
+      <div><b>On the flyer</b>Event QR codes so you can see which fair worked.</div>
+    </div>
+  </div>
+</section>
+
+<section id="library" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Library · every layout, kept on file</p>
+      <h2>The card <em>library.</em></h2>
+      <p class="subtitle">Archives</p>
+      <p>Twelve signature styles, always available and print-ready. Every one can carry a QR code and be recolored to your brand.</p>
+    </div>
+    <h3 class="group-label reveal">Audience series</h3>
+    <div class="choice">
+      <div class="style-card reveal">
+        <div class="mini store">
+          <p class="m-eyebrow">Your Shop · Open daily</p>
+          <h3>The <em>Storefront</em></h3>
+          <p class="m-role">Brick &amp; cream · awning stripes</p>
+          <div class="m-tags"><span>Welcoming</span><span>Local</span></div>
+          <div class="m-qr"></div>
+        </div>
+        <h3>The Storefront</h3>
+        <p class="tagline t-store">Brick &amp; cream · neighborhood favorite</p>
+        <p class="desc">Warm cream with a striped awning edge. Hours, address and a QR to your site or maps sit right on the card.</p>
+        <p class="best"><b>Best for:</b> cafés, boutiques, restaurants, brick-and-mortar shops.</p>
+        <button class="btn solid" onclick="pickStyle('The Storefront')">Request this style</button>
+      </div>
+      <div class="style-card reveal">
+        <div class="mini handle">
+          <p class="m-eyebrow">Your Handle · Follow me</p>
+          <h3>The <em>Handle</em></h3>
+          <p class="m-role">Violet to pink · scan to follow</p>
+          <div class="m-tags"><span>Bold</span><span>Social</span></div>
+          <div class="m-qr"></div>
+        </div>
+        <h3>The Handle</h3>
+        <p class="tagline t-handle">Electric gradient · built to be followed</p>
+        <p class="desc">A vivid gradient with an oversized @ mark. Your handle is the headline and the QR is the call to action.</p>
+        <p class="best"><b>Best for:</b> influencers, streamers, models, content creators.</p>
+        <button class="btn solid" onclick="pickStyle('The Handle')">Request this style</button>
+      </div>
+      <div class="style-card reveal">
+        <div class="mini club">
+          <p class="m-eyebrow">Your Club · Join us</p>
+          <h3>The <em>Club</em></h3>
+          <p class="m-role">Forest &amp; gold · crest seal</p>
+          <div class="m-tags"><span>Official</span><span>Community</span></div>
+          <div class="m-qr"></div>
+        </div>
+        <h3>The Club</h3>
+        <p class="tagline t-club">Forest &amp; gold · official &amp; welcoming</p>
+        <p class="desc">Deep green with a gold crest seal. Looks official enough for a charter, friendly enough for a recruiting table.</p>
+        <p class="best"><b>Best for:</b> clubs, nonprofits, student orgs, teams, congregations.</p>
+        <button class="btn solid" onclick="pickStyle('The Club')">Request this style</button>
+      </div>
+      <div class="style-card reveal">
+        <div class="mini notebook">
+          <p class="m-eyebrow">Your Name · Class of 2026</p>
+          <h3>The <em>Notebook</em></h3>
+          <p class="m-role">Legal-pad yellow · margin line</p>
+          <div class="m-tags"><span>Student</span><span>Intern</span></div>
+          <div class="m-qr"></div>
+        </div>
+        <h3>The Notebook</h3>
+        <p class="tagline t-notebook">Legal pad · fresh &amp; hireable</p>
+        <p class="desc">Yellow ruled paper with a red margin line. Friendly and memorable, with your portfolio or LinkedIn one scan away.</p>
+        <p class="best"><b>Best for:</b> students, graduates, interns, first-job seekers.</p>
+        <button class="btn solid" onclick="pickStyle('The Notebook')">Request this style</button>
+      </div>
+      <div class="style-card reveal">
+        <div class="mini maker">
+          <p class="m-eyebrow">Your Workshop · Handmade</p>
+          <h3>The <em>Maker</em></h3>
+          <p class="m-role">Kraft paper · stamp mark</p>
+          <div class="m-tags"><span>Handmade</span><span>Craft</span></div>
+          <div class="m-qr"></div>
+        </div>
+        <h3>The Maker</h3>
+        <p class="tagline t-maker">Kraft &amp; stamp · made by hand</p>
+        <p class="desc">Warm kraft-paper tones with a dashed stamp mark. Slips into packages and market bags, and links to your shop.</p>
+        <p class="best"><b>Best for:</b> artisans, Etsy sellers, bakers, farmers-market vendors.</p>
+        <button class="btn solid" onclick="pickStyle('The Maker')">Request this style</button>
+      </div>
+      <div class="style-card reveal">
+        <div class="mini stage">
+          <p class="m-eyebrow">Your Act · Now booking</p>
+          <h3>The <em>Stage</em></h3>
+          <p class="m-role">Black &amp; neon · equalizer bars</p>
+          <div class="m-tags"><span>Live</span><span>Booking</span></div>
+          <div class="m-qr"></div>
+        </div>
+        <h3>The Stage</h3>
+        <p class="tagline t-stage">Black &amp; neon · loud on purpose</p>
+        <p class="desc">Jet black with neon glow and equalizer bars. A QR to your music, reel or booking page does the talking.</p>
+        <p class="best"><b>Best for:</b> musicians, DJs, photographers, event performers.</p>
+        <button class="btn solid" onclick="pickStyle('The Stage')">Request this style</button>
+      </div>
+    </div>
+    <h3 class="group-label reveal">Original series</h3>
+    <div class="choice">
       <div class="style-card reveal">
         <div class="mini brass">
           <p class="m-eyebrow">Your Company · Your Trade</p>
@@ -375,7 +736,6 @@
         <p class="best"><b>Best for:</b> trades, local shops, client-facing brands.</p>
         <button class="btn solid" onclick="pickStyle('The Executive')">Request this style</button>
       </div>
-
       <div class="style-card reveal">
         <div class="mini cobalt">
           <p class="m-eyebrow">Your Name · Open to work</p>
@@ -389,7 +749,6 @@
         <p class="best"><b>Best for:</b> tech, job seekers, creators, digital brands.</p>
         <button class="btn solid" onclick="pickStyle('The Cobalt')">Request this style</button>
       </div>
-
       <div class="style-card reveal">
         <div class="mini ivory">
           <p class="m-eyebrow">Your Name · Consulting</p>
@@ -403,7 +762,6 @@
         <p class="best"><b>Best for:</b> consultants, planners, boutiques, formal fields.</p>
         <button class="btn solid" onclick="pickStyle('The Ivory')">Request this style</button>
       </div>
-
       <div class="style-card reveal">
         <div class="mini sage">
           <p class="m-eyebrow">Your Studio · By appointment</p>
@@ -417,7 +775,6 @@
         <p class="best"><b>Best for:</b> wellness, salons, coaches, eco &amp; care work.</p>
         <button class="btn solid" onclick="pickStyle('The Sage')">Request this style</button>
       </div>
-
       <div class="style-card reveal">
         <div class="mini blush">
           <p class="m-eyebrow">Your Brand · Bookings open</p>
@@ -431,7 +788,6 @@
         <p class="best"><b>Best for:</b> beauty, events, creators, hospitality.</p>
         <button class="btn solid" onclick="pickStyle('The Blush')">Request this style</button>
       </div>
-
       <div class="style-card reveal">
         <div class="mini slate">
           <p class="m-eyebrow">Your Name · Professional</p>
@@ -445,7 +801,6 @@
         <p class="best"><b>Best for:</b> corporate, finance, law, anyone who wants clean.</p>
         <button class="btn solid" onclick="pickStyle('The Slate')">Request this style</button>
       </div>
-
     </div>
   </div>
 </section>
@@ -458,6 +813,13 @@
       <p>Cards are just the start. Get the whole look, from ads and posters to logos and a social media starter kit, all designed to match so your brand feels like one thing everywhere.</p>
     </div>
     <div class="svc-grid">
+      <div class="svc reveal">
+        <div class="badges"><span class="pr">Print</span><span class="vr">Virtual</span></div>
+        <h3>QR Codes &amp; Link Pages</h3>
+        <p>Branded QR codes that send people to your main site, plus a simple link page for everything else you want them to see.</p>
+        <p class="inc"><b>Includes:</b> branded QR (PNG / SVG), link page, placement on card &amp; flyers</p>
+        <button class="btn solid" onclick="pickStyle('QR Codes & Link Pages')">Request this</button>
+      </div>
       <div class="svc reveal">
         <div class="badges"><span class="pr">Print</span><span class="vr">Virtual</span></div>
         <h3>Custom Ads</h3>
@@ -533,8 +895,8 @@
       <h2>From message to <em>wallet</em> in a day.</h2>
     </div>
     <div class="steps">
-      <div class="step reveal"><span class="n">01</span><h4>Reach out</h4><p>Send your name or business, what you do, and your contact details.</p></div>
-      <div class="step reveal"><span class="n">02</span><h4>Pick a style</h4><p>Six looks to choose from — I tailor the layout, colors and tags to you.</p></div>
+      <div class="step reveal"><span class="n">01</span><h4>Reach out</h4><p>Send your name or business, what you do, your contact details and the link you want the QR to open.</p></div>
+      <div class="step reveal"><span class="n">02</span><h4>Pick a style</h4><p>Six winter looks plus the twelve-card library — I tailor the layout, colors and tags to you.</p></div>
       <div class="step reveal"><span class="n">03</span><h4>Approve &amp; pay</h4><p>Approve your mockup, pay securely on Venmo, and get print-ready 300 DPI front &amp; back files.</p></div>
       <div class="step reveal"><span class="n">04</span><h4>Print your way</h4><p>Same-day pickup where available, or ship to your door — steps included.</p></div>
     </div>
@@ -604,14 +966,29 @@
         <label for="f-style">Card style or service</label>
         <select id="f-style" name="style">
           <option value="Not sure yet">Not sure yet — help me choose</option>
-          <option value="The Executive">The Executive — brass &amp; ink</option>
-          <option value="The Cobalt">The Cobalt — circuit blue</option>
-          <option value="The Ivory">The Ivory — warm white</option>
-          <option value="The Sage">The Sage — soft green</option>
-          <option value="The Blush">The Blush — blush &amp; plum</option>
-          <option value="The Slate">The Slate — cool gray</option>
+          <option value="The Frost">The Frost — ice blue</option>
+          <option value="The Aurora">The Aurora — northern glow</option>
+          <option value="The Pine">The Pine — spruce &amp; snow</option>
+          <option value="The Snowdrift">The Snowdrift — snow white</option>
+          <option value="The Midnight">The Midnight — indigo sky</option>
+          <option value="The Hearth">The Hearth — charcoal &amp; ember</option>
           <option value="Custom design">Custom design — built from scratch</option>
+          <optgroup label="Archives">
+          <option value="The Storefront">The Storefront — brick &amp; cream</option>
+          <option value="The Handle">The Handle — violet gradient</option>
+          <option value="The Club">The Club — forest &amp; gold</option>
+          <option value="The Notebook">The Notebook — legal-pad yellow</option>
+          <option value="The Maker">The Maker — kraft paper</option>
+          <option value="The Stage">The Stage — black &amp; neon</option>
+            <option value="The Executive">The Executive — brass &amp; ink</option>
+            <option value="The Cobalt">The Cobalt — circuit blue</option>
+            <option value="The Ivory">The Ivory — warm white</option>
+            <option value="The Sage">The Sage — soft green</option>
+            <option value="The Blush">The Blush — blush &amp; plum</option>
+            <option value="The Slate">The Slate — cool gray</option>
+          </optgroup>
           <optgroup label="More services">
+            <option value="QR Codes &amp; Link Pages">QR Codes &amp; Link Pages</option>
             <option value="Custom Ads">Custom Ads</option>
             <option value="Posters">Posters</option>
             <option value="Logo Design">Logo Design</option>
@@ -626,7 +1003,7 @@
       </div>
       <div class="field">
         <label for="f-msg">Your request</label>
-        <textarea id="f-msg" name="message" placeholder="What do you do? What should the card say? Any links, colors or ideas you want included?" required></textarea>
+        <textarea id="f-msg" name="message" placeholder="What do you do? What should the card say? Which link should the QR code open? Any colors or ideas?" required></textarea>
       </div>
       <button type="submit">Send request →</button>
     </form>
@@ -639,6 +1016,7 @@
   SIX·CARDS · Six signature styles · One custom · © 2026 Zachary Frederic
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
@@ -653,6 +1031,31 @@
     }
     document.getElementById('contact').scrollIntoView({behavior:'smooth'});
   }
+
+  // ---------- QR preview ----------
+  const qrBox = document.getElementById('qr-box');
+  const qrUrl = document.getElementById('qr-url');
+  const qrColor = document.getElementById('qr-color');
+  const qrCap = document.getElementById('qr-cap');
+  function makeQR(){
+    let v = qrUrl.value.trim();
+    if (!v) return;
+    if (!/^https?:\/\//i.test(v)) v = 'https://' + v;
+    qrBox.innerHTML = '';
+    qrCap.textContent = v.replace(/^https?:\/\//i,'');
+    if (typeof QRCode === 'undefined'){ qrBox.textContent = 'QR preview unavailable offline.'; return; }
+    new QRCode(qrBox, { text: v, width: 176, height: 176, colorDark: qrColor.value, colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.H });
+  }
+  document.getElementById('qr-make').addEventListener('click', makeQR);
+  qrColor.addEventListener('change', makeQR);
+  qrUrl.addEventListener('keydown', e => { if (e.key === 'Enter'){ e.preventDefault(); makeQR(); } });
+  document.getElementById('qr-dl').addEventListener('click', () => {
+    const c = qrBox.querySelector('canvas');
+    if (!c) return;
+    const a = document.createElement('a');
+    a.href = c.toDataURL('image/png'); a.download = 'my-qr-code.png'; a.click();
+  });
+  window.addEventListener('load', makeQR);
 
   // send the request in the background, then show a Venmo payment step
   const VENMO_URL = 'https://venmo.com/u/sixcardsonline';
