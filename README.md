@@ -151,7 +151,7 @@ Then visit `http://localhost:8000`.
 
 Requests go straight through the contact form on the [live site](https://zachc0des.github.io/sixcards/), or write directly:
 
-- **Email:** [zfrederic00@outlook.com](mailto:zfrederic00@outlook.com)
+- **Email:** [digitalshiftdynamics@gmail.com](mailto:digitalshiftdynamics@gmail.com)
 - **Portfolio:** [zachc0des.github.io](https://zachc0des.github.io)
 - **GitHub:** [@Zachc0des](https://github.com/Zachc0des)
 
