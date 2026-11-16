@@ -1,4 +1,91 @@
-# SIX·CARDS — Business Cards That Open Doors
+# Six Cards: Business Cards That Open Doors
+
+A single-file, static marketing and order site for a custom business card and brand design service. Visitors browse card styles, preview a QR code, send a request, and are pointed to Venmo once their mockup is approved.
+
+**Tagline:** *A card that opens doors.*
+
+---
+
+## Features
+
+- **Winter collection (6 styles):** Frost, Aurora, Pine, Snowdrift, Midnight, Hearth. Frost, Aurora and Pine include a QR code; Snowdrift, Midnight and Hearth are left clear. A QR can be added to any style.
+- **Archives library (12 styles):**
+  - *Audience series:* Storefront, Handle, Club, Notebook, Maker, Stage
+  - *Original series:* Executive, Cobalt, Ivory, Sage, Blush, Slate
+- **Audience sections:** businesses vs. job seekers/creators, plus promotion paths for shops, social profiles and clubs/organizations.
+- **Free QR preview tool:** paste a link, pick a color, generate, and download a PNG.
+- **10 add-on services:** QR codes and link pages, custom ads, posters, logo design, social media starter kit, flyers and handouts, banners and signage, menus and price lists, brand style guide, email signature and digital card.
+- **Promotion tips:** six practical recommendations for getting more from each card.
+- **Request form:** style buttons preselect the form dropdown and scroll to the contact section.
+- **Venmo payment flow:** after a successful submit, the form is replaced with a confirmation panel and a pay button.
+- **Accessibility and polish:** sticky blurred nav, scroll-reveal animations, `prefers-reduced-motion` support, and responsive layouts down to mobile.
+
+## Deliverables
+
+Every card ships as double-sided, print-ready **300 DPI** files sized for **3.5" × 2"** cards, with printing instructions. Same-day pickup is available depending on location; shipping is also offered.
+
+## Tech stack
+
+| Piece | Details |
+|---|---|
+| Markup / styling | Plain HTML and CSS in one file (`index.html`), no build step |
+| Fonts | Google Fonts: Cormorant Garamond, Share Tech Mono |
+| QR codes | [qrcodejs 1.0.0](https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js) via cdnjs |
+| Form handling | [FormSubmit](https://formsubmit.co) (AJAX endpoint, with a normal form POST as fallback) |
+| Payments | Venmo profile link (`@sixcardsonline`) |
+
+## Project structure
+
+```
+.
+├── index.html   # the entire site: CSS, markup and JS
+└── README.md
+```
+
+Page sections, in order: **Hero → Audiences → Promote → Winter styles → QR studio → Library (Archives) → Services → Process → Promotion tips → Pay → Contact → Footer**
+
+## Running locally
+
+No install required. Open `index.html` in a browser, or serve it:
+
+```bash
+python3 -m http.server 8000
+# then visit http://localhost:8000
+```
+
+The QR preview, fonts and form need an internet connection.
+
+## Deployment
+
+Any static host works: GitHub Pages, Netlify, Vercel, Cloudflare Pages, or a plain web server. Upload `index.html` and you're done.
+
+## Customizing
+
+- **Colors:** edit the CSS variables in `:root` at the top of the stylesheet.
+- **Add a card style:**
+  1. Add a `.mini.yourname` CSS block.
+  2. Add a `.style-card` in the relevant section (Winter or Library).
+  3. Add a matching `<option>` in the `#f-style` dropdown.
+  4. Optionally add a `.t-yourname` tagline color class.
+- **Add a service:** copy a `.svc` card in `#services` and add a matching `<option>` under "More services".
+- **Contact email:** update it in the form `action`, the AJAX `fetch` URL, and the `mailto:` link.
+- **Venmo handle:** update the `VENMO_URL` constant in the script, plus the handle text and link in the `#pay` section.
+- **Nav links:** the nav lists every section anchor; update it if you add or remove sections.
+
+## Form setup note
+
+FormSubmit requires a one-time email confirmation. After deploying, submit a test request and click the activation link sent to the receiving address; until then, submissions won't be delivered.
+
+## Order flow
+
+1. Visitor picks a style or service and sends a request.
+2. Owner replies by email with a mockup and final price.
+3. Visitor approves and pays via Venmo, noting their name and card style.
+4. Print-ready 300 DPI front and back files are sent, usually within hours.
+
+## License
+
+© 2026 Zachary Frederic. All rights reserved.# SIX·CARDS — Business Cards That Open Doors
 
 Custom business card design for companies building their brand — and for people building their careers. Six signature styles, print-ready files, printing instructions included.
 
