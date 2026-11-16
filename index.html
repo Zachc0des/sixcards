@@ -188,6 +188,25 @@
   .rec h4{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;margin:0 0 6px;padding-left:12px;}
   .rec p{font-size:11px;color:var(--ink-soft);padding-left:12px;}
 
+  /* ---------- services panel ---------- */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.svc-grid{grid-template-columns:1fr;}}
+  .svc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 22px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:box-shadow .2s, transform .2s;}
+  .svc:hover{box-shadow:0 16px 36px rgba(11,20,36,0.1);transform:translateY(-3px);}
+  .svc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--cobalt),var(--brass));}
+  .svc .badges{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;}
+  .svc .badges span{font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);border-radius:4px;padding:3px 7px;color:var(--ink-soft);background:var(--paper);}
+  .svc .badges span.pr{color:var(--brass-deep);border-color:#E6D5B5;}
+  .svc .badges span.vr{color:var(--cobalt);border-color:#C5D5FA;}
+  .svc h3{font-size:23px;font-style:italic;margin-bottom:8px;}
+  .svc p{font-size:11.5px;color:var(--ink-soft);margin-bottom:14px;flex:1;}
+  .svc .inc{font-size:10px;color:var(--mist);border-top:1px dashed var(--line);padding-top:10px;margin-bottom:14px;}
+  .svc .inc b{font-weight:400;color:var(--ink);}
+  .svc .btn{padding:11px 18px;font-size:11px;align-self:flex-start;}
+  .svc-note{text-align:center;font-size:11.5px;color:var(--ink-soft);margin-top:30px;}
+  .svc-note a{color:var(--cobalt);text-decoration:none;border-bottom:1px dashed var(--cobalt);}
+
   /* ---------- payment ---------- */
   .pay-card{max-width:620px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px 28px;text-align:center;position:relative;overflow:hidden;}
   .pay-card::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,var(--cobalt),var(--brass));}
@@ -260,6 +279,7 @@
     <div class="links">
       <a href="#audiences">Who it's for</a>
       <a href="#styles">Card styles</a>
+      <a href="#services">More services</a>
       <a href="#tips">Promo tips</a>
       <a href="#pay">Pay</a>
       <a href="#contact">Contact</a>
@@ -430,6 +450,82 @@
   </div>
 </section>
 
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Beyond the card · print &amp; virtual</p>
+      <h2>Everything your brand <em>needs.</em></h2>
+      <p>Cards are just the start. Get the whole look, from ads and posters to logos and a social media starter kit, all designed to match so your brand feels like one thing everywhere.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <div class="badges"><span class="pr">Print</span><span class="vr">Virtual</span></div>
+        <h3>Custom Ads</h3>
+        <p>Eye-catching ads for Instagram, Facebook, Google, flyers and newspapers, written and designed to get a click or a call.</p>
+        <p class="inc"><b>Includes:</b> ad copy, layout, sized versions for each platform</p>
+        <button class="btn solid" onclick="pickStyle('Custom Ads')">Request this</button>
+      </div>
+      <div class="svc reveal">
+        <div class="badges"><span class="pr">Print</span><span class="vr">Virtual</span></div>
+        <h3>Posters</h3>
+        <p>Event, promo and brand posters made for walls, windows and community boards, plus a screen version for stories and feeds.</p>
+        <p class="inc"><b>Includes:</b> print-ready PDF, digital version, QR code on request</p>
+        <button class="btn solid" onclick="pickStyle('Posters')">Request this</button>
+      </div>
+      <div class="svc reveal">
+        <div class="badges"><span class="pr">Print</span><span class="vr">Virtual</span></div>
+        <h3>Logo Design</h3>
+        <p>A mark that works on a card, a storefront and a profile picture. Simple, memorable and built to scale.</p>
+        <p class="inc"><b>Includes:</b> 2 concepts, revisions, PNG / SVG / PDF, light &amp; dark versions</p>
+        <button class="btn solid" onclick="pickStyle('Logo Design')">Request this</button>
+      </div>
+      <div class="svc reveal">
+        <div class="badges"><span class="vr">Virtual</span></div>
+        <h3>Social Media Starter Kit</h3>
+        <p>Everything to look consistent from day one: profile picture, banners, highlight covers and post templates in your brand colors.</p>
+        <p class="inc"><b>Includes:</b> profile &amp; banner art, 9 story/highlight covers, 6 post templates</p>
+        <button class="btn solid" onclick="pickStyle('Social Media Starter Kit')">Request this</button>
+      </div>
+      <div class="svc reveal">
+        <div class="badges"><span class="pr">Print</span><span class="vr">Virtual</span></div>
+        <h3>Flyers &amp; Handouts</h3>
+        <p>One-page flyers, door hangers and rack cards that explain what you do and how to reach you in five seconds.</p>
+        <p class="inc"><b>Includes:</b> double-sided layout, print-ready 300 DPI file, printing steps</p>
+        <button class="btn solid" onclick="pickStyle('Flyers & Handouts')">Request this</button>
+      </div>
+      <div class="svc reveal">
+        <div class="badges"><span class="pr">Print</span><span class="vr">Virtual</span></div>
+        <h3>Banners &amp; Signage</h3>
+        <p>Vinyl banners, yard signs, window decals, plus web headers and YouTube/Facebook cover art to match.</p>
+        <p class="inc"><b>Includes:</b> print sizes with bleed, web-sized versions</p>
+        <button class="btn solid" onclick="pickStyle('Banners & Signage')">Request this</button>
+      </div>
+      <div class="svc reveal">
+        <div class="badges"><span class="pr">Print</span><span class="vr">Virtual</span></div>
+        <h3>Menus &amp; Price Lists</h3>
+        <p>Clean, readable menus and service lists for food trucks, salons, shops and freelancers. Printable and phone-friendly.</p>
+        <p class="inc"><b>Includes:</b> print version, mobile-friendly image, easy-edit updates</p>
+        <button class="btn solid" onclick="pickStyle('Menus & Price Lists')">Request this</button>
+      </div>
+      <div class="svc reveal">
+        <div class="badges"><span class="vr">Virtual</span></div>
+        <h3>Brand Style Guide</h3>
+        <p>A one-page cheat sheet of your colors, fonts and logo rules so everything you post or print looks like you.</p>
+        <p class="inc"><b>Includes:</b> color codes, font pairings, logo spacing, do &amp; don't</p>
+        <button class="btn solid" onclick="pickStyle('Brand Style Guide')">Request this</button>
+      </div>
+      <div class="svc reveal">
+        <div class="badges"><span class="vr">Virtual</span></div>
+        <h3>Email Signature &amp; Digital Card</h3>
+        <p>A polished email signature and a shareable digital version of your card for DMs, texts and link-in-bio pages.</p>
+        <p class="inc"><b>Includes:</b> signature HTML, digital card image, QR code</p>
+        <button class="btn solid" onclick="pickStyle('Email Signature & Digital Card')">Request this</button>
+      </div>
+    </div>
+    <p class="svc-note">Need a bundle, or something not listed? <a href="#contact" onclick="pickStyle('Custom design')">Ask for a custom package</a> and I'll quote it.</p>
+  </div>
+</section>
+
 <section class="alt">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -505,7 +601,7 @@
         </div>
       </div>
       <div class="field">
-        <label for="f-style">Card style</label>
+        <label for="f-style">Card style or service</label>
         <select id="f-style" name="style">
           <option value="Not sure yet">Not sure yet — help me choose</option>
           <option value="The Executive">The Executive — brass &amp; ink</option>
@@ -515,6 +611,17 @@
           <option value="The Blush">The Blush — blush &amp; plum</option>
           <option value="The Slate">The Slate — cool gray</option>
           <option value="Custom design">Custom design — built from scratch</option>
+          <optgroup label="More services">
+            <option value="Custom Ads">Custom Ads</option>
+            <option value="Posters">Posters</option>
+            <option value="Logo Design">Logo Design</option>
+            <option value="Social Media Starter Kit">Social Media Starter Kit</option>
+            <option value="Flyers &amp; Handouts">Flyers &amp; Handouts</option>
+            <option value="Banners &amp; Signage">Banners &amp; Signage</option>
+            <option value="Menus &amp; Price Lists">Menus &amp; Price Lists</option>
+            <option value="Brand Style Guide">Brand Style Guide</option>
+            <option value="Email Signature &amp; Digital Card">Email Signature &amp; Digital Card</option>
+          </optgroup>
         </select>
       </div>
       <div class="field">
