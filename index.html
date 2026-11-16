@@ -255,6 +255,59 @@
   .qr-uses div{background:var(--paper);border:1px dashed var(--line);border-radius:10px;padding:14px;font-size:10.5px;color:var(--ink-soft);}
   .qr-uses b{display:block;font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;font-weight:600;color:var(--ink);margin-bottom:2px;}
 
+  /* ---------- card designer ---------- */
+  .dz{background:var(--night);color:#E8EEFB;position:relative;overflow:hidden;border-top:1px solid #1A2740;border-bottom:1px solid #1A2740;}
+  .dz::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(46,107,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(46,107,255,0.05) 1px,transparent 1px);background-size:26px 26px;}
+  .dz .wrap{position:relative;}
+  .dz .sec-head h2{color:#fff;} .dz .sec-head h2 em{color:var(--brass);} .dz .sec-head p{color:#A9B7D6;} .dz .eyebrow{color:var(--cobalt);}
+  .dz-grid{display:grid;grid-template-columns:394px 1fr;gap:26px;align-items:start;}
+  @media(max-width:900px){.dz-grid{grid-template-columns:1fr;}}
+  .dz-prev,.dz-ctrl{background:rgba(11,20,36,.72);border:1px solid #1A2740;border-radius:14px;padding:20px;}
+  .dz-prev{position:sticky;top:76px;}
+  @media(max-width:900px){.dz-prev{position:static;}}
+  .dz-lab{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#7C8AA5;margin:0 0 8px;}
+  .dcard-wrap{margin-bottom:16px;}
+  .dcard{width:350px;max-width:100%;height:200px;border-radius:9px;position:relative;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.5);}
+  .d-pat,.d-edge{position:absolute;pointer-events:none;}
+  .d-pat{inset:0;}
+  .d-edge.e-left{left:0;top:0;bottom:0;width:6px;background:var(--acc);}
+  .d-edge.e-top{left:0;right:0;top:0;height:6px;background:var(--acc);}
+  .d-edge.e-bottom{left:0;right:0;bottom:0;height:6px;background:var(--acc);}
+  .d-edge.e-frame{inset:8px;border:1.5px solid var(--acc);opacity:.75;border-radius:4px;}
+  .d-edge.e-none{display:none;}
+  .d-body{position:absolute;inset:0;padding:24px 28px;display:flex;flex-direction:column;justify-content:center;z-index:1;}
+  .d-body.hasqr{padding-right:96px;}
+  .dcard.center .d-body{align-items:center;text-align:center;}
+  .d-name{font-weight:600;line-height:1.05;word-break:break-word;}
+  .d-rule{width:34px;height:2px;background:var(--acc);margin:11px 0;}
+  .dcard.center .d-rule{margin-left:auto;margin-right:auto;}
+  .d-title{font-size:10px;letter-spacing:.06em;opacity:.82;}
+  .d-bname{font-size:13px;font-weight:600;color:var(--acc);letter-spacing:.04em;}
+  .d-line{font-size:9.5px;display:flex;gap:8px;margin-top:6px;opacity:.92;word-break:break-all;}
+  .d-line i{font-style:normal;color:var(--acc);width:10px;flex:none;}
+  .dcard.center .d-line{justify-content:center;}
+  .d-qr{position:absolute;right:14px;bottom:12px;width:64px;height:64px;background:#fff;padding:4px;border-radius:5px;z-index:2;display:none;}
+  .d-qr img,.d-qr canvas{width:56px !important;height:56px !important;display:block;}
+  .dz-actions{display:flex;gap:8px;flex-wrap:wrap;}
+  .dz .btn{padding:11px 16px;font-size:11px;}
+  .btn.cob{background:var(--cobalt);color:#fff;border:1px solid var(--cobalt);} .btn.cob:hover{background:#4A7DFF;box-shadow:0 0 20px rgba(46,107,255,.45);}
+  .btn.line{background:transparent;color:#E8EEFB;border:1px solid #24314D;} .btn.line:hover{border-color:var(--cobalt);color:#fff;}
+  .dz-note{font-size:10px;color:#7C8AA5;margin-top:12px;line-height:1.6;}
+  .dz-group{margin-bottom:22px;} .dz-group:last-child{margin-bottom:0;}
+  .dz-group h4{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:#fff;margin-bottom:10px;font-weight:600;}
+  .dz-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:540px){.dz-row{grid-template-columns:1fr;}}
+  .dz-f{margin-bottom:12px;}
+  .dz label{display:block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#7C8AA5;margin:0 0 6px;}
+  .dz input[type=text],.dz select{width:100%;font-family:'Share Tech Mono',monospace;font-size:12.5px;background:#0E1B36;color:#E8EEFB;border:1px solid #24314D;border-radius:8px;padding:10px 12px;outline:none;}
+  .dz input[type=text]:focus,.dz select:focus{border-color:var(--cobalt);box-shadow:0 0 0 3px rgba(46,107,255,.18);}
+  .dz input[type=color]{width:100%;height:40px;padding:3px;background:#0E1B36;border:1px solid #24314D;border-radius:8px;cursor:pointer;}
+  .dz input[type=range]{width:100%;accent-color:var(--cobalt);}
+  .dz-presets{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+  @media(max-width:560px){.dz-presets{grid-template-columns:repeat(2,1fr);}}
+  .dz-pre{height:46px;border-radius:7px;border:2px solid transparent;cursor:pointer;font-family:'Share Tech Mono',monospace;font-size:9.5px;letter-spacing:.06em;display:flex;align-items:flex-end;padding:4px 7px;text-align:left;}
+  .dz-pre.on{border-color:var(--cobalt);box-shadow:0 0 0 2px rgba(46,107,255,.3);}
+
   /* process strip */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
   @media(max-width:760px){.steps{grid-template-columns:repeat(2,1fr);}}
@@ -365,6 +418,7 @@
       <a href="#audiences">Who it's for</a>
       <a href="#promote">Promote</a>
       <a href="#styles">Card styles</a>
+      <a href="#designer">Designer</a>
       <a href="#qr">QR codes</a>
       <a href="#library">Library</a>
       <a href="#services">More services</a>
@@ -382,6 +436,7 @@
     <p class="lede">Custom business cards for shops, creators, clubs and careers. A winter-cool collection, QR codes when you want them, print-ready files, printing instructions included.</p>
     <div class="hero-ctas">
       <a class="btn solid" href="#styles">See the styles</a>
+      <a class="btn ghost" href="#designer">Design your own</a>
       <a class="btn ghost" href="#contact">Get yours</a>
     </div>
     <div class="fan reveal">
@@ -581,6 +636,89 @@
         <button class="btn solid" onclick="pickStyle('The Hearth')">Request this style</button>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<section id="designer" class="dz">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">New · interactive card designer</p>
+      <h2>Design your <em>own card.</em></h2>
+      <p>Pick a preset, then change the colors, pattern, font and QR code and watch both sides update live. Download a preview or send the design to me with your request.</p>
+    </div>
+    <div class="dz-grid">
+      <div class="dz-prev reveal">
+        <p class="dz-lab">Front</p>
+        <div class="dcard-wrap">
+          <div class="dcard" id="dc-front"><div class="d-pat"></div><div class="d-edge"></div>
+            <div class="d-body" id="dbody-front"><div class="d-name" id="df-name"></div><div class="d-rule"></div><div class="d-title" id="df-title"></div></div>
+            <div class="d-qr" id="dq-front"></div></div>
+        </div>
+        <p class="dz-lab">Back</p>
+        <div class="dcard-wrap">
+          <div class="dcard" id="dc-back"><div class="d-pat"></div><div class="d-edge"></div>
+            <div class="d-body" id="dbody-back"><div class="d-bname" id="db-name"></div><div class="d-rule"></div>
+              <div class="d-line" id="dl-phone"><i>T</i><span></span></div>
+              <div class="d-line" id="dl-email"><i>E</i><span></span></div>
+              <div class="d-line" id="dl-web"><i>W</i><span></span></div>
+              <div class="d-line" id="dl-addr"><i>A</i><span></span></div></div>
+            <div class="d-qr" id="dq-back"></div></div>
+        </div>
+        <div class="dz-actions">
+          <button class="btn cob" type="button" id="dz-send">Send design to me</button>
+          <button class="btn line" type="button" id="dz-dl-both">Download both (PNG)</button>
+          <button class="btn line" type="button" id="dz-dl-front">Front</button>
+          <button class="btn line" type="button" id="dz-dl-back">Back</button>
+        </div>
+        <p class="dz-note">Downloads are 1050 × 600 px (3.5" × 2" at 300 DPI) previews with no bleed. I add bleed and tune the final print files. "Send design to me" fills the request form with your choices.</p>
+      </div>
+
+      <div class="dz-ctrl reveal">
+        <div class="dz-group">
+          <h4>Start from a preset</h4>
+          <div class="dz-presets" id="dz-presets"></div>
+          <div class="dz-actions" style="margin-top:12px"><button class="btn line" type="button" id="dz-shuffle">Surprise me</button><button class="btn line" type="button" id="dz-reset">Reset</button></div>
+        </div>
+        <div class="dz-group">
+          <h4>Your details</h4>
+          <div class="dz-row">
+            <div class="dz-f"><label for="dz-name">Name / business</label><input type="text" id="dz-name" maxlength="40"></div>
+            <div class="dz-f"><label for="dz-title">Title / tagline</label><input type="text" id="dz-title" maxlength="50"></div>
+            <div class="dz-f"><label for="dz-phone">Phone</label><input type="text" id="dz-phone" maxlength="30"></div>
+            <div class="dz-f"><label for="dz-email">Email</label><input type="text" id="dz-email" maxlength="50"></div>
+            <div class="dz-f"><label for="dz-web">Website / handle</label><input type="text" id="dz-web" maxlength="50"></div>
+            <div class="dz-f"><label for="dz-addr">Address / extra line</label><input type="text" id="dz-addr" maxlength="50"></div>
+          </div>
+        </div>
+        <div class="dz-group">
+          <h4>Colors</h4>
+          <div class="dz-row">
+            <div class="dz-f"><label for="dz-bg1">Background start</label><input type="color" id="dz-bg1"></div>
+            <div class="dz-f"><label for="dz-bg2">Background end</label><input type="color" id="dz-bg2"></div>
+            <div class="dz-f"><label for="dz-text">Text</label><input type="color" id="dz-text"></div>
+            <div class="dz-f"><label for="dz-acc">Accent</label><input type="color" id="dz-acc"></div>
+          </div>
+          <div class="dz-f"><label for="dz-angle">Gradient angle</label><input type="range" id="dz-angle" min="0" max="360"></div>
+        </div>
+        <div class="dz-group">
+          <h4>Style</h4>
+          <div class="dz-row">
+            <div class="dz-f"><label for="dz-pattern">Pattern</label><select id="dz-pattern"><option value="none">None</option><option value="grid">Grid</option><option value="dots">Dots</option><option value="lines">Ruled lines</option><option value="stripes">Pinstripe</option><option value="stars">Stars</option><option value="snow">Snow dust</option><option value="frost">Frost crystals</option></select></div>
+            <div class="dz-f"><label for="dz-edge">Accent edge</label><select id="dz-edge"><option value="none">None</option><option value="left">Left bar</option><option value="top">Top bar</option><option value="bottom">Bottom bar</option><option value="frame">Inner frame</option></select></div>
+            <div class="dz-f"><label for="dz-font">Font</label><select id="dz-font"><option value="serif">Cormorant (elegant serif)</option><option value="mono">Share Tech Mono (techy)</option><option value="georgia">Georgia (classic)</option><option value="sans">Clean sans</option></select></div>
+            <div class="dz-f"><label for="dz-align">Alignment</label><select id="dz-align"><option value="left">Left</option><option value="center">Centered</option></select></div>
+          </div>
+          <div class="dz-f"><label for="dz-size">Name size</label><input type="range" id="dz-size" min="18" max="38"></div>
+        </div>
+        <div class="dz-group">
+          <h4>QR code</h4>
+          <div class="dz-row">
+            <div class="dz-f"><label for="dz-qr">Placement</label><select id="dz-qr"><option value="none">No QR (leave clear)</option><option value="back">On the back</option><option value="front">On the front</option></select></div>
+            <div class="dz-f"><label for="dz-qrurl">Link (blank = use website)</label><input type="text" id="dz-qrurl" placeholder="https://yourwebsite.com"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1017,6 +1155,7 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
@@ -1056,6 +1195,122 @@
     a.href = c.toDataURL('image/png'); a.download = 'my-qr-code.png'; a.click();
   });
   window.addEventListener('load', makeQR);
+
+  // ---------- card designer ----------
+  (function(){
+    const $ = id => document.getElementById(id);
+    const FONTS = {serif:"'Cormorant Garamond',Georgia,serif", mono:"'Share Tech Mono',monospace", georgia:"Georgia,'Times New Roman',serif", sans:"system-ui,-apple-system,'Segoe UI',Arial,sans-serif"};
+    const P = [
+      {n:'Frost',bg1:'#EAF4FB',bg2:'#CFE5F4',text:'#12304A',acc:'#2F7DB5',pattern:'frost',edge:'none',font:'serif',size:30,align:'left'},
+      {n:'Aurora',bg1:'#06122B',bg2:'#0A2342',text:'#E8F6F5',acc:'#5EF2C0',pattern:'stars',edge:'none',font:'serif',size:30,align:'left'},
+      {n:'Pine',bg1:'#12281F',bg2:'#0C1C16',text:'#EEF3EC',acc:'#A8D5B8',pattern:'snow',edge:'left',font:'serif',size:30,align:'left'},
+      {n:'Snowdrift',bg1:'#F7F9FB',bg2:'#E4EAF0',text:'#2A3440',acc:'#6F8AA6',pattern:'none',edge:'top',font:'serif',size:30,align:'center'},
+      {n:'Midnight',bg1:'#141A3D',bg2:'#0A0E26',text:'#E6E9FA',acc:'#9DB0FF',pattern:'stars',edge:'frame',font:'georgia',size:24,align:'center'},
+      {n:'Hearth',bg1:'#211C1B',bg2:'#2B2220',text:'#F3E9E1',acc:'#F2A05C',pattern:'lines',edge:'bottom',font:'serif',size:30,align:'left'},
+      {n:'Executive',bg1:'#0A0E14',bg2:'#0A0E14',text:'#ECEAE2',acc:'#C99A4B',pattern:'none',edge:'left',font:'serif',size:30,align:'left'},
+      {n:'Blush',bg1:'#FBF1F2',bg2:'#F4E1E4',text:'#5C3A4D',acc:'#A9556B',pattern:'stripes',edge:'none',font:'serif',size:30,align:'left'}
+    ];
+    const DEF = {name:'Alex Rivera',title:'Founder · Rivera Studio',phone:'(555) 010-2030',email:'alex@riverastudio.com',web:'riverastudio.com',addr:'123 Main Street, Your City',qr:'back',qrurl:'',angle:160};
+    const ids = ['name','title','phone','email','web','addr','bg1','bg2','angle','text','acc','pattern','edge','font','align','size','qr','qrurl'];
+    const S = Object.assign({}, DEF);
+    let lastQR = null;
+
+    const rgba = (hex,a) => { const n=parseInt(hex.slice(1),16); return 'rgba('+(n>>16&255)+','+(n>>8&255)+','+(n&255)+','+a+')'; };
+    function pat(k,c){
+      const r=a=>rgba(c,a);
+      switch(k){
+        case 'grid': return {img:'linear-gradient('+r(.1)+' 1px,transparent 1px),linear-gradient(90deg,'+r(.1)+' 1px,transparent 1px)',size:'20px 20px',pos:'0 0'};
+        case 'dots': return {img:'radial-gradient('+r(.22)+' 1px,transparent 1.6px)',size:'16px 16px',pos:'0 0'};
+        case 'lines': return {img:'repeating-linear-gradient(0deg,transparent 0 13px,'+r(.1)+' 13px 14px)',size:'auto',pos:'0 0'};
+        case 'stripes': return {img:'repeating-linear-gradient(135deg,'+r(.08)+' 0 1px,transparent 1px 12px)',size:'auto',pos:'0 0'};
+        case 'stars': return {img:'radial-gradient('+r(.8)+' 1px,transparent 1.4px),radial-gradient('+r(.5)+' 1px,transparent 1.4px)',size:'46px 46px,46px 46px',pos:'0 0,23px 23px'};
+        case 'snow': return {img:'radial-gradient('+r(.5)+' 1.4px,transparent 2px),radial-gradient('+r(.3)+' 1px,transparent 1.6px)',size:'30px 30px,22px 22px',pos:'0 0,11px 15px'};
+        case 'frost': return {img:'repeating-linear-gradient(60deg,'+r(.07)+' 0 1px,transparent 1px 14px),repeating-linear-gradient(-60deg,'+r(.07)+' 0 1px,transparent 1px 14px)',size:'auto',pos:'0 0'};
+        default: return {img:'none',size:'auto',pos:'0 0'};
+      }
+    }
+    function qrText(){
+      let v=(S.qrurl||S.web||'').trim(); if(!v) return '';
+      if(!/^https?:\/\//i.test(v)) v='https://'+v; return v;
+    }
+    function render(){
+      const f=$('dc-front'), b=$('dc-back');
+      [f,b].forEach(c=>{
+        c.style.background='linear-gradient('+S.angle+'deg,'+S.bg1+','+S.bg2+')';
+        c.style.color=S.text; c.style.fontFamily=FONTS[S.font];
+        c.style.setProperty('--acc',S.acc);
+        c.classList.toggle('center',S.align==='center');
+        const p=pat(S.pattern,S.text), pl=c.querySelector('.d-pat');
+        pl.style.backgroundImage=p.img; pl.style.backgroundSize=p.size; pl.style.backgroundPosition=p.pos;
+        c.querySelector('.d-edge').className='d-edge e-'+S.edge;
+      });
+      $('df-name').textContent=S.name||'Your Name'; $('df-name').style.fontSize=S.size+'px';
+      $('df-title').textContent=S.title;
+      $('db-name').textContent=S.name||'Your Name';
+      [['phone','phone'],['email','email'],['web','web'],['addr','addr']].forEach(([k,id])=>{
+        const line=$('dl-'+id); line.querySelector('span').textContent=S[k]; line.style.display=S[k]?'':'none';
+      });
+      $('dbody-front').classList.toggle('hasqr',S.qr==='front');
+      $('dbody-back').classList.toggle('hasqr',S.qr==='back');
+      const t=qrText(), key=S.qr+'|'+t;
+      if(key!==lastQR){
+        lastQR=key;
+        ['front','back'].forEach(s=>{ const el=$('dq-'+s); el.innerHTML=''; el.style.display='none'; });
+        if(S.qr!=='none' && t && typeof QRCode!=='undefined'){
+          const el=$('dq-'+S.qr); el.style.display='block';
+          new QRCode(el,{text:t,width:112,height:112,colorDark:'#0B1424',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H});
+        }
+      }
+    }
+    function readControls(){ ids.forEach(k=>{ const v=$('dz-'+k).value; S[k]=(k==='size'||k==='angle')?parseInt(v,10):v; }); }
+    function syncControls(){ ids.forEach(k=>{ $('dz-'+k).value=S[k]; }); }
+    function clearActive(){ document.querySelectorAll('.dz-pre').forEach(x=>x.classList.remove('on')); }
+    function applyPreset(i){
+      Object.assign(S,P[i],{angle:S.angle}); delete S.n;
+      syncControls(); render(); clearActive();
+      const el=document.querySelectorAll('.dz-pre')[i]; if(el) el.classList.add('on');
+    }
+    // preset swatches
+    const wrap=$('dz-presets');
+    P.forEach((p,i)=>{
+      const b=document.createElement('button'); b.type='button'; b.className='dz-pre'; b.textContent=p.n;
+      b.style.background='linear-gradient(160deg,'+p.bg1+','+p.bg2+')'; b.style.color=p.text;
+      b.addEventListener('click',()=>applyPreset(i)); wrap.appendChild(b);
+    });
+    ids.forEach(k=>$('dz-'+k).addEventListener('input',()=>{ readControls(); clearActive(); render(); }));
+    $('dz-shuffle').addEventListener('click',()=>{
+      applyPreset(Math.floor(Math.random()*P.length));
+      const pats=['none','grid','dots','lines','stripes','stars','snow','frost'], edges=['none','left','top','bottom','frame'];
+      S.pattern=pats[Math.floor(Math.random()*pats.length)]; S.edge=edges[Math.floor(Math.random()*edges.length)];
+      S.angle=Math.floor(Math.random()*360); syncControls(); render();
+    });
+    $('dz-reset').addEventListener('click',()=>{ Object.assign(S,DEF); applyPreset(0); });
+
+    // downloads
+    async function grab(el,name){
+      if(typeof html2canvas==='undefined'){ alert('Download needs an internet connection to load its image tool.'); return; }
+      const c=await html2canvas(el,{scale:3,backgroundColor:null,useCORS:true});
+      const a=document.createElement('a'); a.href=c.toDataURL('image/png'); a.download=name; a.click();
+    }
+    $('dz-dl-front').addEventListener('click',()=>grab($('dc-front'),'my-card-front.png'));
+    $('dz-dl-back').addEventListener('click',()=>grab($('dc-back'),'my-card-back.png'));
+    $('dz-dl-both').addEventListener('click',async()=>{ await grab($('dc-front'),'my-card-front.png'); setTimeout(()=>grab($('dc-back'),'my-card-back.png'),400); });
+
+    // send to request form
+    $('dz-send').addEventListener('click',()=>{
+      pickStyle('Custom design');
+      const qr = S.qr==='none' ? 'none' : 'on the '+S.qr+' → '+(qrText()||'(link needed)');
+      $('f-msg').value =
+        'Custom card from the designer:\n'+
+        'Name: '+S.name+'\nTitle: '+S.title+'\nPhone: '+S.phone+'\nEmail: '+S.email+'\nWebsite: '+S.web+'\nExtra line: '+S.addr+'\n'+
+        'Colors: background '+S.bg1+' → '+S.bg2+' ('+S.angle+'°), text '+S.text+', accent '+S.acc+'\n'+
+        'Pattern: '+S.pattern+' · Edge: '+S.edge+' · Font: '+S.font+' · Align: '+S.align+' · Name size: '+S.size+'px\n'+
+        'QR code: '+qr;
+    });
+
+    syncControls(); applyPreset(0);
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(render);
+  })();
 
   // send the request in the background, then show a Venmo payment step
   const VENMO_URL = 'https://venmo.com/u/sixcardsonline';
