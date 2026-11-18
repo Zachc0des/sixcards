@@ -56,6 +56,38 @@
   .theme-btn:hover{border-color:var(--cobalt);color:var(--cobalt);}
   .theme-btn .ic{font-size:13px;line-height:1;}
 
+  /* ---------- Online button (glowing) ---------- */
+  @property --glow-ang{syntax:'<angle>';inherits:false;initial-value:0deg;}
+  .nav-right{display:flex;align-items:center;gap:10px;}
+  .online-btn{
+    position:relative;isolation:isolate;display:inline-flex;align-items:center;gap:7px;
+    font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:.08em;
+    color:var(--cobalt);text-decoration:none;white-space:nowrap;
+    border:1px solid var(--cobalt);border-radius:999px;padding:7px 16px;
+    box-shadow:0 0 8px rgba(34,197,94,.45);
+    animation:onlinePulse 2.4s ease-in-out infinite;
+    transition:color .18s, transform .18s;
+  }
+  .online-btn svg{width:13px;height:13px;flex:none;}
+  /* moving green glow */
+  .online-btn::before{
+    content:"";position:absolute;inset:-4px;border-radius:inherit;z-index:-1;
+    background:conic-gradient(from var(--glow-ang),transparent 0deg,#22C55E 70deg,#4ADE80 110deg,transparent 180deg,transparent 360deg);
+    filter:blur(7px);opacity:.95;
+    animation:onlineSpin 2.8s linear infinite;
+  }
+  /* solid fill so the glow only shows around the edge */
+  .online-btn::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--paper);z-index:-1;}
+  .online-btn:hover{color:#22C55E;transform:translateY(-1px);}
+  @keyframes onlineSpin{to{--glow-ang:360deg;}}
+  @keyframes onlinePulse{
+    0%,100%{box-shadow:0 0 6px rgba(34,197,94,.35);}
+    50%{box-shadow:0 0 14px rgba(34,197,94,.7);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .online-btn,.online-btn::before{animation:none;}
+  }
+
   /* ---------- hero ---------- */
   header{padding:84px 0 70px;text-align:center;position:relative;overflow:hidden;}
   header::before{
@@ -494,9 +526,15 @@
       <a href="#pay">Pay</a>
       <a href="#contact">Contact</a>
     </div>
-    <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch to dark mode" title="Toggle dark / light mode">
-      <span class="ic" id="theme-ic">☾</span><span id="theme-lab">Dark</span>
-    </button>
+    <div class="nav-right">
+      <a class="online-btn" href="https://zachc0des.github.io/sixcardsonline-/index.html" aria-label="Visit the Six Cards online site">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.7 4 5.7 4 9s-1.4 6.3-4 9c-2.6-2.7-4-5.7-4-9s1.4-6.3 4-9z"/></svg>
+        Online
+      </a>
+      <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch to dark mode" title="Toggle dark / light mode">
+        <span class="ic" id="theme-ic">☾</span><span id="theme-lab">Dark</span>
+      </button>
+    </div>
   </div>
 </nav>
 
